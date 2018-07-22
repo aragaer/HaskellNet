@@ -13,7 +13,7 @@ License:        BSD3
 License-file:   LICENSE
 Category:       Network
 Homepage:       https://github.com/jtdaugherty/HaskellNet
-Cabal-version:  >=1.6
+Cabal-version:  >=1.8
 Build-type:     Simple
 
 Extra-Source-Files:
@@ -58,3 +58,12 @@ Library
     old-time,
     mime-mail >= 0.4.7 && < 0.5,
     text
+
+Test-Suite IMAPParsers
+    type: exitcode-stdio-1.0
+    main-is: test/IMAPParsersTest.hs
+    build-depends: base,
+                   HaskellNet,
+                   test-framework,
+                   test-framework-hunit,
+                   HUnit

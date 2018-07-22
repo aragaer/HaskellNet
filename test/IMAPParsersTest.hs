@@ -3,6 +3,8 @@ module Main (main) where
 import Network.HaskellNet.IMAP.Parsers
 import Network.HaskellNet.IMAP.Types
 
+import Test.Framework
+import Test.Framework.Providers.HUnit
 import Test.HUnit
 
 baseTest =
@@ -174,4 +176,4 @@ testData = [ "base" ~: baseTest
            ]
 
 
-main = runTestTT (test testData)
+main = defaultMain $ hUnitTestToTests $ TestList testData
